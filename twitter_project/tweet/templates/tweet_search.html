@@ -1,0 +1,17 @@
+<h1>Search Tweets</h1>
+
+<form method="GET" action=".">
+    {{ form.as_p }}
+    <button type="submit">Search</button>
+</form>
+
+{% if query %}
+    <h2>Results for "{{ query }}":</h2>
+    <ul>
+        {% for tweet in results %}
+            <li><strong>{{ tweet.user.username }}</strong>: {{ tweet.text }}</li>
+        {% empty %}
+            <li>No tweets found.</li>
+        {% endfor %}
+    </ul>
+{% endif %}
