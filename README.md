@@ -13,7 +13,7 @@ This is a simple tweet application built with Django, allowing users to create, 
 ## Requirements
 
 - Python 3.8+
-- Django 4.0+
+- Django 5.1.1
 - Bootstrap 5 (for styling)
 - Pillow (for handling images)
 
