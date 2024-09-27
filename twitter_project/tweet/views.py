@@ -63,23 +63,3 @@ def register(request):
 
     return render(request,'registration/register.html',{'form':form})
 
-
-
-
-def tweet_search_view(request):
-    form = TweetSearchForm()
-    results = []
-    query = None
-
-    if 'query' in request.GET:
-        form = TweetSearchForm(request.GET)
-        if form.is_valid():
-            query = form.cleaned_data['query']
-            results = Tweet.objects.filter(text__icontains=query)
-
-    return render(request, 'tweet_search.html', {
-        'form': form,
-        'query': query,
-        'results': results
-    })
-
